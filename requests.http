@@ -1,0 +1,43 @@
+# Home Route (GET request)
+GET http://localhost:3000/
+
+###
+# Index Route (GET request)
+GET http://localhost:3000/index
+
+###
+# Get All Users (GET request)
+GET http://localhost:3000/data
+###
+# Get User by ID (GET request - e.g., ID 1)
+GET http://localhost:3000/data/1
+###
+# Add New User (POST request - valid request)
+POST http://localhost:3000/data
+Content-Type: application/json
+
+{
+    "id": "3",
+    "Firstname": "Anna",
+    "Surname": "Mäkinen"
+}
+
+###
+# Add New User (POST request - invalid request, missing field)
+POST http://localhost:3000/data
+Content-Type: application/json
+
+{
+    "id": "4",
+    "Firstname": "Mikko"
+}
+###
+# Add New User (POST request - duplicate ID)
+POST http://localhost:3000/data
+Content-Type: application/json
+
+{
+    "id": "1",
+    "Firstname": "New",
+    "Surname": "User"
+}
